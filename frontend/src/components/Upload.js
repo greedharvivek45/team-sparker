@@ -154,7 +154,7 @@ function Upload({ setResult }) {
     const res = await fetch("https://deepfake-backend-65vl.onrender.com/api/upload/", {
       method: "POST",
       body: formData,
-     
+      mode: "no-cors"
     });
 
     const data = await res.json();
