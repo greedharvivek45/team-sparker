@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-9*+h)y*_**c2v^vn1930(k^)&a%apy9$tg92j-s7)1!ngcnux+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+
 
 CORS_ALLOW_HEADERS = [
     '*'
@@ -128,10 +128,23 @@ FILE_UPLOAD_MAX_MEMORY_SIZE = 10485760
 
 STATIC_URL = 'static/'
 CORS_ALLOW_METHODS = [
-    'GET',
-    'POST',
-    'OPTIONS',
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+]
+CORS_ALLOW_HEADERS = [
+    "accept",
+    "authorization",
+    "content-type",
+    "origin",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
 ]
 
+ALLOWED_HOSTS = ['*']
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

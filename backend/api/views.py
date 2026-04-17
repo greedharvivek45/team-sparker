@@ -68,15 +68,15 @@ def generate_spectrogram(file_path):
 @csrf_exempt
 def upload_audio(request):
     # ✅ ADD THIS BLOCK (IMPORTANT)
-    if request.method == "OPTIONS":
-        response = JsonResponse({"message": "OK"})
-        response["Access-Control-Allow-Origin"] = "*"
-        response["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS"
-        response["Access-Control-Allow-Headers"] = "*"
-        return response
+    # if request.method == "OPTIONS":
+    #     response = JsonResponse({"message": "OK"})
+    #     response["Access-Control-Allow-Origin"] = "*"
+    #     response["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS"
+    #     response["Access-Control-Allow-Headers"] = "*"
+    #     return response
 
-    if request.method == "GET":
-        return JsonResponse({"message": "API is working 🚀"})
+    # if request.method == "GET":
+    #     return JsonResponse({"message": "API is working 🚀"})
     # ✅ Allow GET
     if request.method == "GET":
         return JsonResponse({"message": "API is working 🚀"})
