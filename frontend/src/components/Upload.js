@@ -151,7 +151,7 @@ function Upload({ setResult }) {
     const formData = new FormData();
     formData.append("file", file);
 
-    const res = await fetch("http://127.0.0.1:8000/api/upload/", {
+    const res = await fetch("https://deepfake-backend-65vl.onrender.com/api/upload/", {
       method: "POST",
       body: formData,
     });
