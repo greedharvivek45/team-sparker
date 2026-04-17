@@ -28,7 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-
+CORS_ALLOW_HEADERS = [
+    '*'
+]
 # Application definition
 
 INSTALLED_APPS = [
@@ -71,6 +73,7 @@ TEMPLATES = [
     },
 ]
 CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
 WSGI_APPLICATION = 'backend.wsgi.application'
 
 
