@@ -14,32 +14,23 @@ function Upload({ setResult }) {
   formData.append("file", file);
 
   try {
-    const res = await fetch("https://deepfake-backend-65vl.onrender.com/api/upload/", {
-      method: "POST",
-      body: formData,
-    });
+  const res = await fetch("https://deepfake-backend-65vl.onrender.com/api/upload/", {
+    method: "POST",
+    body: formData,
+  });
 
-    let data;
-
-    try {
-      data = await res.json();
-    } catch {
-      alert("Server response error");
-      return;
-    }
-
-    if (data.error) {
-      alert(data.error);
-      return;
-    }
-
-    setResult(data);
-
-  } catch (err) {
-    alert("Network error");
+  if (!res.ok) {
+    alert("Server crashed or slow");
+    return;
   }
-};
 
+  const data = await res.json();
+  setResult(data);
+
+} catch (err) {
+  alert("Backend not reachable (Render sleep/crash)");
+}
+  };
   return (
     <div className="upload-container">
       
